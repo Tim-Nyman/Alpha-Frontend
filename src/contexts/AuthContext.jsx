@@ -159,7 +159,11 @@ export const AuthProvider = ({ children }) => {
   }
 
   const authFetch = async (url, options = {}) => {
-    const headers = options.headers ? { ...options.headers } : {};
+    const headers = {
+      ...(options.headers || {}),
+      "X-API-KEY": import.meta.env.VITE_X_API_KEY,
+    };
+    
     if (token) {
       headers["Authorization"] = `Bearer ${token}`
     }

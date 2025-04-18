@@ -69,8 +69,4 @@ const SignIn = () => {
     )
 }
 
-
-{/* <div>{auth.isAuthenticated ? 'yes' : 'no'}</div>
-            <div>{auth.loading ? 'yes' : 'no'}</div> */}
-
 export default SignIn

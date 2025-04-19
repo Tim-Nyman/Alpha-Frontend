@@ -6,7 +6,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
 
 
-  const apiUrl = "https://localhost:7167/api/signin";
+  const apiUrl = "https://asp-net-backend.azurewebsites.net/api/signin";
   const [loading, setLoading] = useState(true);
   const [token, setToken] = useState(null);
   const [user, setUser] = useState(null);
@@ -86,7 +86,7 @@ export const AuthProvider = ({ children }) => {
     userId,
   }) => {
     try {
-      const res = await authFetch("https://localhost:7167/api/projects", {
+      const res = await authFetch("https://asp-net-backend.azurewebsites.net/api/projects", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -123,7 +123,7 @@ export const AuthProvider = ({ children }) => {
     statusId
   }) => {
     try {
-      const res = await authFetch("https://localhost:7167/api/projects", {
+      const res = await authFetch("https://asp-net-backend.azurewebsites.net/api/projects", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -148,7 +148,7 @@ export const AuthProvider = ({ children }) => {
 
   const deleteProject = async (projectId) => {
     try {
-      const res = await authFetch(`https://localhost:7167/api/projects/${projectId}`, {
+      const res = await authFetch(`https://asp-net-backend.azurewebsites.net/api/projects/${projectId}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" }
       });

@@ -18,14 +18,14 @@ const AddProjectModal = ({ getProjects }) => {
   const [budget, setBudget] = useState(0);
 
   const getClients = async () => {
-    const res = await authFetch("https://localhost:7167/api/Clients");
+    const res = await authFetch("https://asp-net-backend.azurewebsites.net/api/Clients");
     const data = await res.json();
     console.log("Fetched Clients:", data);
     setClients(data);
   }
 
   const getUsers = async () => {
-    const res = await authFetch("https://localhost:7167/api/Users");
+    const res = await authFetch("https://asp-net-backend.azurewebsites.net/api/Users");
     const data = await res.json();
     console.log("Fetched Users:", data);
     setUsers(data);

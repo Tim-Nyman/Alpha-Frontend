@@ -15,7 +15,7 @@ const Projects = () => {
   }, []);
 
   const getProjects = async () => {
-    const res = await authFetch("https://localhost:7167/api/Projects");
+    const res = await authFetch("https://asp-net-backend.azurewebsites.net/api/Projects");
     const data = await res.json();
     setProjects(data);
 

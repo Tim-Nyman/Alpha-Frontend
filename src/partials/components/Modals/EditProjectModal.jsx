@@ -20,19 +20,19 @@ const EditProjectModal = ({ project, getProjects }) => {
     const [projectStatus, setProjectStatus] = useState(project.status.id)
 
     const getClients = async () => {
-        const res = await authFetch("https://localhost:7167/api/Clients");
+        const res = await authFetch("https://asp-net-backend.azurewebsites.net/api/Clients");
         const data = await res.json();
         setClients(data);
     }
 
     const getStatus = async () => {
-        const res = await authFetch("https://localhost:7167/api/Status");
+        const res = await authFetch("https://asp-net-backend.azurewebsites.net/api/Status");
         const data = await res.json();
         setStatus(data);
     }
 
     const getUsers = async () => {
-        const res = await authFetch("https://localhost:7167/api/Users");
+        const res = await authFetch("https://asp-net-backend.azurewebsites.net/api/Users");
         const data = await res.json();
         setUsers(data);
     }
